@@ -24,3 +24,9 @@ model Post {
   @@index([title, content])
 }
 ```
+
+```js
+  DATABASE_URL="HELLO_CAC_BAN_TRE"
+  JWT_ACCESS_TOKEN_SECRET="HELLO_CAC_BAN_TRE"
+  JWT_REFRESH_TOKEN_SECRET="HELLO_CAC_BAN_TRE"
+```
