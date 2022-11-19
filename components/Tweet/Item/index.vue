@@ -6,10 +6,10 @@
 
         <div :class="tweetBodyWrapper">
             <p class="flex-shrink w-auto font-medium text-gray-800 dark:text-white" :class="textSize">
-                {{ props.tweet.text }}
+                {{ props.tweet?.text }}
             </p>
 
-            <div v-for="image in tweet.mediaFiles" :key="image.id" class="flex my-3 mr-2 border-2 rounded-2xl"
+            <div v-for="image in tweet?.mediaFiles" :key="image.id" class="flex my-3 mr-2 border-2 rounded-2xl"
                 :class="twitterBorderColor">
                 <img :src="image.url" class="max-h-96 object-cover rounded-2xl mx-auto" />
             </div>

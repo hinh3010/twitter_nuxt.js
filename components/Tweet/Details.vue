@@ -8,7 +8,9 @@
         <TweetListFeed :tweets="replies" />
     </div>
 </template>
+
 <script setup>
+
 const props = defineProps({
     tweet: {
         type: Object,
