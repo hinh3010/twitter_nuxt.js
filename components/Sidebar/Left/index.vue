@@ -105,13 +105,13 @@
             class="flex flex-row items-center justify-center px-2 py-2 mx-auto mt-auto mb-5 rounded-full cursor-pointer w-14 xl:w-full hover:bg-gray-100 dark:hover:bg-dim-800">
 
             <div class="flex flex-row">
-                <img class="w-10 h-10 rounded-full">
+                <img class="w-10 h-10 rounded-full" :src="user.profileImage">
                 <div class="flex-col hidden ml-2 xl:block">
                     <h1 class="text-sm font-bold text-gray-800 dark:text-white">
-                        <!-- {{ user.name }} -->
+                        {{ user.name }}
                     </h1>
                     <p class="text-sm text-gray-400">
-                        <!-- {{ user.handle }} -->
+                        {{ user.handle }}
                     </p>
                 </div>
 
@@ -122,7 +122,6 @@
                     <ChevronDownIcon />
                 </div>
             </div>
-
 
 
         </div>
@@ -137,5 +136,11 @@ import { HashtagIcon, BellIcon, InboxIcon, BookmarkIcon, DocumentTextIcon, UserI
 
 
 const { defaultTransition } = useTailwindConfig()
+const props = defineProps({
+    user: {
+        type: Object,
+        required: true
+    }
+})
 
 </script>

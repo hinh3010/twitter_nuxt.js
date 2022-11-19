@@ -6,6 +6,8 @@ import { uploadToCloudinary } from "../../../utils/cloudinary.js"
 
 export default defineEventHandler(async (event) => {
 
+    console.log("aduuu")
+
     const form = formidable({})
 
     const response = await new Promise((resolve, reject) => {

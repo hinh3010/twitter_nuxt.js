@@ -6,12 +6,11 @@
                 <Title>Home / HelloCacBanTre</Title>
             </Head>
 
-            <!-- <div class="border-b" :class="twitterBorderColor">
+            <div class="border-b" :class="twitterBorderColor">
                 <TweetForm :user="user" @on-success="handleFormSuccess" />
             </div>
 
-            <TweetListFeed :tweets="homeTweets" /> -->
-            {{ user }}
+            <TweetListFeed :tweets="homeTweets" />
 
         </MainSection>
     </div>
@@ -22,32 +21,31 @@
 
 const { useAuthUser } = useAuth()
 const user = useAuthUser()
-// const { twitterBorderColor } = useTailwindConfig()
-// const { getTweets } = useTweets()
+
+const { twitterBorderColor } = useTailwindConfig()
 
 const loading = ref(false)
-// const homeTweets = ref([])
-// const { useAuthUser } = useAuth()
 
-// const user = useAuthUser()
+const { getTweets } = useTweets()
+const homeTweets = ref([])
 
-// onBeforeMount(async () => {
-//     loading.value = true
-//     try {
-//         const { tweets } = await getTweets()
+onBeforeMount(async () => {
+    loading.value = true
+    try {
+        const { tweets } = await getTweets()
 
-//         homeTweets.value = tweets
-//     } catch (error) {
-//         console.log(error)
-//     } finally {
-//         loading.value = false
-//     }
-// })
+        homeTweets.value = tweets
+    } catch (error) {
+        console.log(error)
+    } finally {
+        loading.value = false
+    }
+})
 
-// function handleFormSuccess(tweet) {
-//     navigateTo({
-//         path: `/status/${tweet.id}`
-//     })
-// }
+function handleFormSuccess(tweet) {
+    navigateTo({
+        path: `/status/${tweet.id}`
+    })
+}
 
 </script>

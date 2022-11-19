@@ -13,7 +13,7 @@
                     <!-- Left sidebar -->
                     <div class="hidden md:block xs-col-span-1 xl:col-span-2">
                         <div class="sticky top-0">
-                            <SidebarLeft />
+                            <SidebarLeft :user="user" />
                             <!-- <SidebarLeft :user="user" @on-tweet="handleOpenTweetModal" @on-logout="handleUserLogout" /> -->
                         </div>
                     </div>

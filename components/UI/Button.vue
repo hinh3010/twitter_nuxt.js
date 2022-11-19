@@ -4,7 +4,7 @@
         :disabled="props.disabled" :class="classes" @click="handleClick">
 
         <span :class="textFontSize">
-            <slot />
+            <slot></slot>
         </span>
 
     </button>
